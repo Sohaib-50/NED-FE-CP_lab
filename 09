@@ -1,0 +1,44 @@
+#1. Develop a simple calculator (using functions) that defines addition, subtraction, multiplication and division operation. User selects the operation and provides the operands then output will be generated.
+
+def add(n1, n2):
+    return n1 + n2
+def sub(n1, n2):
+    return n1 - n2
+def mult(n1, n2):
+    return n1 * n2
+def div(n1, n2):
+    return n1 / n2
+
+print("OPTIONS:")
+print("1. Add")
+print("2. Subtract")
+print("3. Multiply")
+print("4. Divide")
+
+opt = int(input("Choose an operation from the above list: "))
+if opt in range(1, 5):
+    x = float(input("Enter operand 1: "))
+    y = float(input("Enter operand 2: "))
+
+    if opt == 1:
+        print(f"{x} + {y} = {add(x, y)}")
+    elif opt == 2:
+        print(f"{x} - {y} = {sub(x,y)}")
+    elif opt == 3:
+        print(f"{x} x {y} = {mult(x, y)}")
+    else:
+        print(f"{x} / {y} = {div(x, y)}")
+else:
+    print("Invalid input.")
+
+
+#Q4. Construct an outer function “out_circle” that takes radius ‘r1’ of an outer circle as argument and calculates its area. Also construct an inner function “in_circle” that calculates it’s circumference with a simillar radius. Inner function should be enclosed within the outer function.
+
+def out_circle(r1):
+    area = 3.142 * (r1 ** 2)
+    def inner_circle(r1):
+        circumference = 2 * 3.142 * r1
+        return circumference
+    return area, inner_circle(r1)
+    
+    
