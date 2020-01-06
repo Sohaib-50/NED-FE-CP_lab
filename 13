@@ -1,0 +1,25 @@
+#Q1. Develop a program to read a file in a remote directory with ‘for loop’
+with open("C:/S.A/S.A.txt", "r") as f:
+    for line in f:
+        print(line.strip())
+f.close()
+
+#Q2. Develop a script that prints the words of file separated by commas.
+with open("C:/S.A/S.A.txt", "r") as f:
+    words = []
+    for line in f:
+        line = line.split()
+        for word in line:
+            words.append(word.strip("."))
+print(", ".join(words))
+
+#Q3. Develop a script to find the longest word in the file.
+with open("C:/S.A/S.A.txt", "r") as f:
+    words = []
+    for line in f:
+        line = line.split()
+        for word in line:
+            words.append(word.strip("."))
+words.sort(reverse = True, key = len)
+print("longest word:", words[0])
+
